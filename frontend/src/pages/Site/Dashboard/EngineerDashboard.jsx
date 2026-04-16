@@ -16,11 +16,7 @@ const EngineerDashboard = () => {
     const [actionItems, setActionItems] = useState([]);
     const [error, setError] = useState('');
 
-    useEffect(() => {
-        loadDashboardData();
-    }, []);
-
-    const loadDashboardData = async () => {
+    async function loadDashboardData() {
         setError('');
         try {
             const dashboardData = await api.getEngineerDashboard('Arjun');
@@ -36,7 +32,15 @@ const EngineerDashboard = () => {
             console.error('Failed to load dashboard data:', error);
             setError('Failed to load dashboard data. Please try again.');
         }
-    };
+    }
+
+    useEffect(() => {
+        const timerId = setTimeout(() => {
+            loadDashboardData();
+        }, 0);
+
+        return () => clearTimeout(timerId);
+    }, []);
 
     const getStatusVariant = (status) => {
         const variants = {

@@ -15,11 +15,7 @@ const AdminDashboard = () => {
     const [actionItems, setActionItems] = useState([]);
     const [error, setError] = useState('');
 
-    useEffect(() => {
-        loadDashboardData();
-    }, []);
-
-    const loadDashboardData = async () => {
+    async function loadDashboardData() {
         setError('');
         try {
             const dashboardData = await api.getAdminDashboard();
@@ -43,7 +39,15 @@ const AdminDashboard = () => {
             });
             setActionItems([]);
         }
-    };
+    }
+
+    useEffect(() => {
+        const timerId = setTimeout(() => {
+            loadDashboardData();
+        }, 0);
+
+        return () => clearTimeout(timerId);
+    }, []);
 
     return (
         <div className={styles.dashboard}>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, ClipboardCheck, FileText, Camera, Building2 } from 'lucide-react';
+import { ArrowLeft, ClipboardCheck, FileText, Camera } from 'lucide-react';
 import api from '../../../services/api';
 import styles from './Inspections.module.css';
 
@@ -14,11 +14,7 @@ const CreateInspection = () => {
         photos: []
     });
 
-    useEffect(() => {
-        loadTasks();
-    }, []);
-
-    const loadTasks = async () => {
+    async function loadTasks() {
         try {
             const data = await api.getTasks();
             // Only show tasks that are in INSPECTION status
@@ -27,7 +23,15 @@ const CreateInspection = () => {
         } catch (error) {
             console.error('Failed to load tasks:', error);
         }
-    };
+    }
+
+    useEffect(() => {
+        const timerId = setTimeout(() => {
+            loadTasks();
+        }, 0);
+
+        return () => clearTimeout(timerId);
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;

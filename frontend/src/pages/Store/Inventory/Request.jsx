@@ -15,11 +15,7 @@ const MaterialRequest = () => {
         reason: ''
     });
 
-    useEffect(() => {
-        loadData();
-    }, []);
-
-    const loadData = async () => {
+    async function loadData() {
         try {
             const [inventoryData, sitesData] = await Promise.all([
                 api.getInventory(),
@@ -30,7 +26,15 @@ const MaterialRequest = () => {
         } catch (error) {
             console.error('Failed to load data:', error);
         }
-    };
+    }
+
+    useEffect(() => {
+        const timerId = setTimeout(() => {
+            loadData();
+        }, 0);
+
+        return () => clearTimeout(timerId);
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;

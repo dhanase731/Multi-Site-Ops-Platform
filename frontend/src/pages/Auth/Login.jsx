@@ -30,7 +30,7 @@ const Login = () => {
                 await login(email, tenantId);
                 navigate(from, { replace: true });
             }
-        } catch (err) {
+        } catch {
             setError('Invalid credentials or tenant ID');
         } finally {
             setIsSubmitting(false);

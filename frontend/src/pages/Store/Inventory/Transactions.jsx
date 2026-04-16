@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ArrowLeft, TrendingUp, TrendingDown, Package, Calendar, User } from 'lucide-react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import api from '../../../services/api';
@@ -22,11 +22,7 @@ const TransactionHistory = () => {
     const [selectedItem, setSelectedItem] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        loadData();
-    }, [itemId]);
-
-    const loadData = async () => {
+    const loadData = useCallback(async () => {
         setLoading(true);
         try {
             const [txns, inv] = await Promise.all([
@@ -45,7 +41,11 @@ const TransactionHistory = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [itemId]);
+
+    useEffect(() => {
+        loadData();
+    }, [loadData]);
 
     const getTransactionTypeInfo = (type) => {
         return TRANSACTION_TYPES[type] || TRANSACTION_TYPES['STOCK_IN'];
