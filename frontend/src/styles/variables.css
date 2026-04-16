@@ -1,0 +1,77 @@
+:root {
+  /* Brand Colors - Construction Industry Theme */
+  --color-primary: #0B1F3A;
+  /* Deep Navy */
+  --color-primary-light: #1a3a5c;
+  /* Lighter Navy */
+  --color-accent: #FF8C42;
+  /* Safety Orange */
+  --color-accent-hover: #ff7a2e;
+  /* Darker Orange */
+
+  /* Status Colors */
+  --color-success: #2ECC71;
+  /* Green */
+  --color-warning: #F4B400;
+  /* Amber */
+  --color-danger: #E74C3C;
+  /* Red */
+  --color-info: #3498DB;
+  /* Blue */
+
+  /* Neutral Scale - Light Theme */
+  --color-bg-body: #F4F6F8;
+  /* Slate Gray */
+  --color-bg-surface: #FFFFFF;
+  /* White */
+  --color-text-main: #1E1E1E;
+  /* Charcoal */
+  --color-text-secondary: #64748b;
+  /* Slate 500 */
+  --color-text-muted: #94a3b8;
+  /* Slate 400 */
+  --color-border: #e2e8f0;
+  /* Slate 200 */
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 300ms ease-in-out;
+}
+
+/* Dark Mode Support (Future-proofing) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg-body: #0f172a;
+    --color-bg-surface: #1e293b;
+    --color-text-main: #f8fafc;
+    --color-text-secondary: #94a3b8;
+    --color-border: #334155;
+  }
+}

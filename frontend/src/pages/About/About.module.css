@@ -1,0 +1,242 @@
+.page {
+  min-height: 100vh;
+  padding: 3rem clamp(1.25rem, 3vw, 3rem);
+  background:
+    radial-gradient(circle at top left, rgba(255, 140, 66, 0.14), transparent 28%),
+    linear-gradient(180deg, rgba(11, 31, 58, 0.06), transparent 18%),
+    var(--color-bg-body);
+  color: var(--color-text-main);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.9fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.heroContent,
+.heroCard,
+.statCard,
+.highlightCard,
+.stepCard {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: var(--shadow-lg);
+  border-radius: 1.25rem;
+}
+
+.heroContent {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.kicker {
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.heroContent h1,
+.sectionHeader h2 {
+  margin: 0;
+  color: var(--color-primary);
+  line-height: 1.1;
+}
+
+.heroContent h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  max-width: 12ch;
+}
+
+.lead {
+  margin: 1rem 0 0;
+  max-width: 62ch;
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  margin-top: 1.75rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+}
+
+.primaryButton {
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-accent), #ff9d5b);
+  box-shadow: 0 12px 24px rgba(255, 140, 66, 0.28);
+}
+
+.secondaryButton {
+  color: var(--color-primary);
+  background: rgba(11, 31, 58, 0.05);
+  border: 1px solid rgba(11, 31, 58, 0.12);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-1px);
+}
+
+.heroCard {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.heroCardLabel {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 140, 66, 0.12);
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.featureList {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--color-text-secondary);
+  display: grid;
+  gap: 0.7rem;
+}
+
+.statsGrid,
+.highlightGrid,
+.stepsGrid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.statsGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.statCard {
+  padding: 1.25rem;
+}
+
+.statCard strong {
+  display: block;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: var(--color-primary);
+}
+
+.statCard span {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--color-text-secondary);
+}
+
+.section {
+  margin-top: 2.5rem;
+}
+
+.sectionHeader {
+  margin-bottom: 1rem;
+}
+
+.sectionHeader h2 {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+}
+
+.highlightGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.highlightCard,
+.stepCard {
+  padding: 1.25rem;
+}
+
+.iconWrap,
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 140, 66, 0.12);
+  color: var(--color-accent);
+}
+
+.highlightCard h3,
+.stepCard h3 {
+  margin: 1rem 0 0.5rem;
+  color: var(--color-primary);
+}
+
+.highlightCard p,
+.stepCard p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.stepsGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stepTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.stepNumber {
+  font-weight: 800;
+}
+
+.stepIcon {
+  color: var(--color-primary);
+}
+
+@media (max-width: 960px) {
+  .hero,
+  .highlightGrid,
+  .stepsGrid,
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroContent h1 {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 1rem;
+  }
+
+  .heroContent,
+  .heroCard,
+  .statCard,
+  .highlightCard,
+  .stepCard {
+    border-radius: 1rem;
+  }
+}

@@ -1,0 +1,57 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Status Variants */
+.assigned {
+    background-color: rgba(148, 163, 184, 0.1);
+    color: #64748b;
+}
+
+.in_progress {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--color-info);
+}
+
+.inspection {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--color-warning);
+}
+
+.approved {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--color-success);
+}
+
+.closed {
+    background-color: rgba(100, 116, 139, 0.1);
+    color: #475569;
+}
+
+/* Priority Variants */
+.high {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--color-danger);
+}
+
+.medium {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--color-warning);
+}
+
+.low {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--color-info);
+}
+
+.default {
+    background-color: rgba(148, 163, 184, 0.1);
+    color: var(--color-text-secondary);
+}
