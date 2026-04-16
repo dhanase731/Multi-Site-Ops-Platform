@@ -13,6 +13,9 @@ if (!connectionString) {
 
 export const pool = new Pool({
   connectionString,
+  ssl: process.env.NODE_ENV === 'production' || process.env.VERCEL
+    ? { rejectUnauthorized: false }
+    : undefined,
 });
 
 export const runQuery = async (text, params = []) => {
