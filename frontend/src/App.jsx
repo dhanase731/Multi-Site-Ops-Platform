@@ -12,6 +12,7 @@ import InventoryList from './pages/Store/Inventory/List';
 import MaterialRequest from './pages/Store/Inventory/Request';
 import TransactionHistory from './pages/Store/Inventory/Transactions';
 import UserManagement from './pages/Admin/Users/List';
+import ApprovalsList from './pages/Admin/Approvals/List';
 import InspectionsList from './pages/Site/Inspections/List';
 import CreateInspection from './pages/Site/Inspections/Create';
 import AdminDashboard from './pages/Admin/Dashboard/AdminDashboard';
@@ -53,6 +54,7 @@ function App() {
                 <CreateSite />
               </RequireRole>
             } />
+            <Route path="/admin/approvals" element={<ApprovalsList />} />
 
             {/* Dashboard Routes */}
             <Route path="/admin/dashboard" element={<AdminDashboard />} />

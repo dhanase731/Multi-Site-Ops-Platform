@@ -1,0 +1,203 @@
+.container {
+    padding: 1rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+    margin: 0;
+}
+
+.subtitle {
+    margin: 0.35rem 0 0;
+    color: var(--color-text-secondary);
+}
+
+.refreshButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-surface);
+    color: var(--color-text-main);
+    cursor: pointer;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.statCard {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+}
+
+.statIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: rgba(245, 158, 11, 0.12);
+    color: var(--color-warning);
+}
+
+.statLabel {
+    margin: 0 0 0.25rem;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+}
+
+.statValue {
+    margin: 0;
+    color: var(--color-text-main);
+    font-size: 1.75rem;
+    font-weight: 800;
+}
+
+.errorState,
+.emptyState {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    color: var(--color-text-main);
+}
+
+.errorState {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.retryButton {
+    border: none;
+    border-radius: 999px;
+    background: var(--color-accent);
+    color: white;
+    padding: 0.55rem 1rem;
+    cursor: pointer;
+}
+
+.emptyState {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.emptyState h2,
+.emptyState p {
+    margin: 0;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.card {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.cardTitle {
+    margin: 0;
+    color: var(--color-text-main);
+    font-size: 1.1rem;
+}
+
+.cardMeta,
+.description {
+    margin: 0;
+    color: var(--color-text-secondary);
+}
+
+.description {
+    margin-bottom: 1rem;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin: 0;
+}
+
+.details dt {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.details dd {
+    margin: 0;
+    color: var(--color-text-main);
+    font-weight: 600;
+}
+
+.cardFooter {
+    margin-top: 1rem;
+}
+
+.primaryLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    background: var(--color-accent);
+    color: white;
+    font-weight: 600;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    color: var(--color-text-secondary);
+}
