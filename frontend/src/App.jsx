@@ -40,7 +40,6 @@ function App() {
               <AdminLayout />
             </RequireRole>
           }>
-            <Route path="/admin/dashboard" element={<Dashboard />} />
             <Route path="/app" element={<Navigate to="/admin/dashboard" replace />} />
 
             {/* Admin Only Routes */}
